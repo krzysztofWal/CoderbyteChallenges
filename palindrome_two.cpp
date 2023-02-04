@@ -14,13 +14,12 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <cctype>
-using namespace std;
 
 bool isalpha_m(char c) {
     return static_cast<bool>(std::isalpha(static_cast<unsigned char>(c)));
 }
 
-string PalindromeTwo(string str) {
+std::string PalindromeTwo(std::string str) {
   //code goes here
   unsigned long long i{ 0 };
   unsigned long long j{ str.length() - 1 };
@@ -39,9 +38,7 @@ string PalindromeTwo(string str) {
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << PalindromeTwo(coderbyteInternalStdinFunction(stdin));
+  std::cout << PalindromeTwo(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

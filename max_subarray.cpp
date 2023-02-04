@@ -15,7 +15,6 @@ Optimal: o(n), achieved: o(n)
 #include <algorithm>
 
 int MaxSubarray(int arr[], int arrLength) {
-  
   // code goes here
   int cs{}, bs{INT32_MIN};
   for (size_t i{}; i < arrLength; i++) {
@@ -26,11 +25,9 @@ int MaxSubarray(int arr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << MaxSubarray(A, arrLength);
   return 0;
-    
 }

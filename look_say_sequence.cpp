@@ -16,7 +16,6 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 
 std::string LookSaySequence(int num) {
-  
   // code goes here  
   std::string sNum = std::to_string(num);
   std::string tmp;
@@ -35,13 +34,10 @@ std::string LookSaySequence(int num) {
   tmp.push_back(sNum.back());
 
   return tmp;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << LookSaySequence(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

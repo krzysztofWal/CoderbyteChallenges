@@ -19,7 +19,6 @@ Optimal: o(n), achieved: o(n)
 #define DEBUG 0
 
 std::string FindIntersection(std::string strArr[], int arrLength) {
-
     // code goes here  
     std::string tmp_str{};
     std::vector<int> vec{};
@@ -48,7 +47,6 @@ std::string FindIntersection(std::string strArr[], int arrLength) {
         }
     }
 
-    
     std::sort(vec.begin(), vec.end());
     int previous{ vec.at(0) };
     
@@ -63,15 +61,12 @@ std::string FindIntersection(std::string strArr[], int arrLength) {
       tmp_str.erase(tmp_str.begin(), tmp_str.begin()+1);
     }
     return tmp_str;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << FindIntersection(A, arrLength);
   return 0;
-    
 }

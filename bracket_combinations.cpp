@@ -16,8 +16,6 @@ Optimal: o(n), achieved: o(n)
 #include <vector>
 #include <array>
 
-using namespace std;
-
 int BracketCombinations(int num) {
   int previousCatalan{1};
   for (int i{1};i<num;i++) {

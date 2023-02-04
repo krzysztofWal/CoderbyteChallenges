@@ -39,13 +39,10 @@ std::string FizzBuzz(int n) {
   }
   num.pop_back();
   return num;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << FizzBuzz(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

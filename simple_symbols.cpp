@@ -13,10 +13,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-#include <regex>
-using namespace std;
 
-string SimpleSymbols(string str) {
+std::string SimpleSymbols(std::string str) {
   
   // code goes here
   if (isalpha(str.at(0)) || isalpha(str.at(str.length()-1))) { return "false";}
@@ -30,9 +28,7 @@ string SimpleSymbols(string str) {
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << SimpleSymbols(coderbyteInternalStdinFunction(stdin));
+  std::cout << SimpleSymbols(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

@@ -18,7 +18,6 @@ Optimal: o(n), achieved: o(n)
 #include <unordered_set>
 
 int LongestConsecutive(int arr[], int arrLength) {
-  
   // code goes here
   // use unordered set with average constant time insertion 
   // and saying if the set contains an element
@@ -39,11 +38,9 @@ int LongestConsecutive(int arr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << LongestConsecutive(A, arrLength);
   return 0;
-    
 }

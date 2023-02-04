@@ -13,7 +13,6 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 #include <cmath>
 #include <algorithm>
-using namespace std;
 
 bool IsPrime(int num) {
   if (num <= 1 || num % 2 == 0) {return 0;}
@@ -24,7 +23,6 @@ bool IsPrime(int num) {
 }
 
 int PrimeChecker(int num) {
-  
   // code goes here  
   std::string s = std::to_string(num);
   std::sort(s.begin(),s.end());
@@ -33,13 +31,12 @@ int PrimeChecker(int num) {
   } while(std::next_permutation(s.begin(), s.end()));
 
   return 0;
-
 }
 
 int main(void) { 
    
   // keep this function call here
-  cout << PrimeChecker(coderbyteInternalStdinFunction(stdin));
+  std::cout << PrimeChecker(coderbyteInternalStdinFunction(stdin));
   return 0;
     
 }

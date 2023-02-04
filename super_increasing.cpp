@@ -16,22 +16,18 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 
 std::string Superincreasing(int arr[], int arrLength) {
-  
   // code goes here
   for (size_t i{1}; i < arrLength; i++) {
     if (arr[i] <= arr[i-1]) {return "false";}
     arr[i] += arr[i-1];
   }
   return "true";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << Superincreasing(A, arrLength);
   return 0;
-    
 }

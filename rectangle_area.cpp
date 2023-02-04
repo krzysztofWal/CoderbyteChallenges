@@ -17,9 +17,8 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <cmath>
 #include <algorithm>
 #include <array>
-using namespace std;
 
-double RectangleArea(string strArr[], int arrLength) {
+double RectangleArea(std::string strArr[], int arrLength) {
   // code goes here
   std::array<double,8> pntArr;
   std::array<double,6> lenArr; 
@@ -40,21 +39,18 @@ double RectangleArea(string strArr[], int arrLength) {
   // sort the distances between points and return first value multipled by second
   std::sort(lenArr.begin(),lenArr.end()); 
   return lenArr.at(2)*lenArr.at(0);
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  string A[] = coderbyteInternalStdinFunction(stdin);
+  std::string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << RectangleArea(A, arrLength);
+  std::cout << RectangleArea(A, arrLength);
   return 0;
-    
 }
 
-      // std::cout << "sqrt( (" << pntArr.at(2*j) << " - " << pntArr.at(2*i) << " )^2 + ("
-      //           << pntArr.at(2*j+1) << " - " << pntArr.at(2*i+1) << " )^2 ) = " 
-                // << lenArr.at(sb-1) << std::endl;
-  // for (const auto &el : pntArr) {std::cout << el << " ";} std::cout << "\n";
-  // for (const auto &el : lenArr) {std::cout << el << " ";} std::cout << "\n";
+// std::cout << "sqrt( (" << pntArr.at(2*j) << " - " << pntArr.at(2*i) << " )^2 + ("
+//           << pntArr.at(2*j+1) << " - " << pntArr.at(2*i+1) << " )^2 ) = " 
+//           << lenArr.at(sb-1) << std::endl;
+// for (const auto &el : pntArr) {std::cout << el << " ";} std::cout << "\n";
+// for (const auto &el : lenArr) {std::cout << el << " ";} std::cout << "\n";

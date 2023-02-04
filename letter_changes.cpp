@@ -13,10 +13,8 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <set>
-using namespace std;
 
-string LetterChanges(string str) {
-  
+std::string LetterChanges(std::string str) {
   // code goes here  
   std::set<char> vowSet = {'a', 'e', 'i', 'o', 'u'};
   // assuming there are no uppercases in the beginning
@@ -30,14 +28,12 @@ string LetterChanges(string str) {
     }
   }
   return str;
-  
-
 }
 
 int main(void) { 
    
   // keep this function call here
-  cout << LetterChanges(coderbyteInternalStdinFunction(stdin));
+  std::cout << LetterChanges(coderbyteInternalStdinFunction(stdin));
   return 0;
     
 }

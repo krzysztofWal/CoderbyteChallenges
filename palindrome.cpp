@@ -11,10 +11,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-string Palindrome(string str) {
-  
+std::string Palindrome(std::string str) {
   // code goes here
   size_t j{str.length()-1};
   size_t i{0};
@@ -37,13 +35,10 @@ string Palindrome(string str) {
     if(j>=1) {j--;};
   }
   return "true";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << Palindrome(coderbyteInternalStdinFunction(stdin));
+  std::cout << Palindrome(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

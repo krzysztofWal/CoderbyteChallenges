@@ -10,10 +10,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-int WordCount(string str) {
-  
+int WordCount(std::string str) {
   // code goes here  
   size_t pos{str.find(" ")};
   size_t cnt{};
@@ -22,13 +20,10 @@ int WordCount(string str) {
     pos = str.find(" ",pos+1);
   }  
   return ++cnt;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << WordCount(coderbyteInternalStdinFunction(stdin));
+  std::cout << WordCount(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

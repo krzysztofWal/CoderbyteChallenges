@@ -15,24 +15,18 @@ Optimal: o(-), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 int PentagonalNumber(int num) {
-  
   // code goes here
   size_t sum{1};
   while (--num > 0) {
     sum += num * 5;
   }
   return sum;
-
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << PentagonalNumber(coderbyteInternalStdinFunction(stdin));
+  std::cout << PentagonalNumber(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

@@ -15,13 +15,12 @@ between 5 and 5 at the end of the string.
 Optimal: o(n), achieved: o(n)
 */
 
-
 #include <stdio.h> 
 #include <string.h>
+
 #define IF_DEBUG 0
 
 void QuestionsMarks(char * str) {
-  
   // code goes here 
   int positions[strlen(str)];
   int cnt = 0; int q_cnt = 0; int t_cnt = 0;
@@ -50,13 +49,10 @@ void QuestionsMarks(char * str) {
     for (int i=0;i<cnt;i++){printf("\\%i ", positions[i]);}
     for (int i=0;i<cnt;i++){printf("%c ", str[positions[i]]);}
   }
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   QuestionsMarks(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

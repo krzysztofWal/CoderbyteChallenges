@@ -14,10 +14,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-string MultipleBrackets(string str) {
-  
+std::string MultipleBrackets(std::string str) {
   // code goes here
   int open_c{}, open_s{}, cnt{};
 
@@ -45,13 +43,10 @@ string MultipleBrackets(string str) {
   if (open_c != 0 || open_s != 0) return "0";
 
   return "1 " + std::to_string(cnt);
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << MultipleBrackets(coderbyteInternalStdinFunction(stdin));
+  std::cout << MultipleBrackets(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

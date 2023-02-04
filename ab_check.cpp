@@ -12,10 +12,8 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <deque>
-using namespace std;
 
-string ABCheck(string str) {
-  
+std::string ABCheck(std::string str) {
   // code goes here  
   size_t a{str.find("a")},b{str.find("b")},s{str.find(" ")};
   int sPos{-1}, sCnt;
@@ -46,13 +44,10 @@ string ABCheck(string str) {
     } 
   }
   return "false";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << ABCheck(coderbyteInternalStdinFunction(stdin));
+  std::cout << ABCheck(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

@@ -76,7 +76,6 @@ bool DepthFirstSearch(const std::string_view& sv, std::vector<std::vector<char>>
 }
 
 std::string BoggleSolver(std::string strArr[], int arrLength) {
-
   std::string_view fView = strArr[0];
   std::string_view sView = strArr[1];
   size_t wordCnt{};
@@ -106,20 +105,18 @@ std::string BoggleSolver(std::string strArr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << BoggleSolver(A, arrLength);
   return 0;
-    
 }
 
- // std::cout << "DFS :" << ind << " :" << v.at(i).at(j) << " i:" << i << " j:" << j << std::endl;
+// std::cout << "DFS :" << ind << " :" << v.at(i).at(j) << " i:" << i << " j:" << j << std::endl;
 // std::cout << sv << std::endl;
 // std::cout << "Found " << sv << std::endl;
-    // size_t i{};
-    // for (const auto &el : arrAsVec) {
-    //   for (const auto &c : el) std::cout << i++ << ":" << c << " ";
-    //   std::cout << std::endl;
-    // }
+// size_t i{};
+// for (const auto &el : arrAsVec) {
+//   for (const auto &c : el) std::cout << i++ << ":" << c << " ";
+//   std::cout << std::endl;
+// }

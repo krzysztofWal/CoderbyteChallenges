@@ -123,18 +123,3 @@ int main(void) {
 //    " " << inFindV.substr(inFindBegin,inFindEnd-inFindBegin+1) <<  "\n";
 //  std::cout << "increasing inFindEnd, now its = " << inFindEnd << " str[inFindEnd] =" << inFind.at(inFindEnd)<< 
 //      " " << inFindV.substr(inFindBegin,inFindEnd-inFindBegin+1) << "\n";
-
-  // int cntIn{}; int cntWhat{};
-  // for (auto i{0};i<whatFind.length();i++) {
-  //   cntIn = 0; cntWhat = 0;
-  //   if (whatFind.find_first_of(whatFind.at(i)) == whatFind.find_last_of(whatFind.at(i)) && whatFind.length()!=1) {
-  //   // if there are no duplicates of that letter
-  //     if (inFind.find(whatFind.at(i)) == std::string::npos) {return false;}
-  //   } else {
-  //   //if there are duplicates of that letter
-  //     for (const auto &el:inFind) {cntIn = (el==whatFind.at(i)) ? cntIn+1 : cntIn;};
-  //     for (const auto &el:whatFind) {cntWhat = (el==whatFind.at(i)) ? cntWhat+1 : cntWhat;}
-  //     if (cntIn < cntWhat) {return false;}
-  //   }
-  // }
-  // return true;

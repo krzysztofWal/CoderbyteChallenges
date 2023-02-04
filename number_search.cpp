@@ -15,10 +15,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-#include <vector>
-#include <cmath>
+
 int NumberSearch(std::string str) {
-  
   // code goes here
   double sum{};
   size_t cnt{};
@@ -32,9 +30,7 @@ int NumberSearch(std::string str) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << NumberSearch(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

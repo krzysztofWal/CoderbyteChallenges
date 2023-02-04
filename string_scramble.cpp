@@ -47,9 +47,7 @@ std::string StringScramble(std::string str1, std::string str2) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << StringScramble(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

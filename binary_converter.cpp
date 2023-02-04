@@ -9,9 +9,8 @@ Optimal: o(-), achieved: o(-) - not calculated
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-string BinaryConverter(const string &str) {
+std::string BinaryConverter(const std::string &str) {
   // code goes here  
   return std::to_string(std::stoul(str,nullptr,2));
 }
@@ -19,7 +18,7 @@ string BinaryConverter(const string &str) {
 int main(void) { 
    
   // keep this function call here
-  cout << BinaryConverter(coderbyteInternalStdinFunction(stdin));
+  std::cout << BinaryConverter(coderbyteInternalStdinFunction(stdin));
   return 0;
     
 }

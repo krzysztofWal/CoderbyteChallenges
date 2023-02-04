@@ -1,4 +1,4 @@
-# --NAME-HERE--
+# Changing Sequence
 # 
 # Have the function ChangingSequence(arr) take the array of numbers stored in arr and
 # return the index at which the numbers stop increasing and begin decreasing or stop
@@ -20,7 +20,6 @@ def ChangingSequence(arr):
     if (arr[i] > arr[i - 1] and up_flag is False 
         or arr[i] < arr[i - 1] and up_flag is True):
       return i - 1
-
 
   return -1
 

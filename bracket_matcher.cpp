@@ -16,7 +16,6 @@ Optimal: o(n), achieved: o(n)
 using namespace std;
 
 int BracketMatcher(string str) {
-  
   // code goes here
   // idea seen in deuzen user's code (Javascript)
   int cnt{};
@@ -27,34 +26,10 @@ int BracketMatcher(string str) {
   }
   if (cnt == 0) {return 1;}
   return 0;
-
-  /*
-  int o_cnt{0};
-  int c_cnt{0};
-  int i{0};
-  while(str.at(i) != '(') { // until reach the first '('
-    if(str.at(i)== ')') {return 0;} // if there is ')' before return 0
-    if(++i==str.length()) {break;} // if come to an end break from the loop
-  }
-  for (; i<str.length(); i++) {
-    if (str.at(i) == '(') {
-      o_cnt++;
-    } else if(str.at(i) == ')' && c_cnt == o_cnt) {
-      return 0;
-    } else if(str.at(i) == ')') {
-      c_cnt++;
-    }
-  }
-  if (o_cnt == c_cnt) {return 1;}
-    else {return 0;}
-  */
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   cout << BracketMatcher(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

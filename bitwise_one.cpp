@@ -15,25 +15,20 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <string>
 #include <sstream>
 #include <bitset>
-using namespace std;
 
-string BitwiseOne(string strArr[], int arrLength) {
-  
+std::string BitwiseOne(std::string strArr[], int arrLength) {  
   // code goes here
   std::bitset<32> bit{ std::stoul(strArr[0],nullptr,2) | std::stoul(strArr[1],nullptr,2)};
   std::stringstream ss;
   ss << bit;
   ss >> strArr[0];
   return strArr[0].substr(strArr[0].length() - strArr[1].length() , strArr[1].length());
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  string A[] = coderbyteInternalStdinFunction(stdin);
+  std::string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << BitwiseOne(A, arrLength);
+  std::cout << BitwiseOne(A, arrLength);
   return 0;
-    
 }

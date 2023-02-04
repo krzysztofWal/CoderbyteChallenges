@@ -11,11 +11,8 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <algorithm>
-using namespace std;
 
-
-string AlphabetSoup(string str) {
-  
+std::string AlphabetSoup(std::string str) {
   // code goes here 
   /*
   std::string tmp;
@@ -38,17 +35,13 @@ string AlphabetSoup(string str) {
     return "Error allocating";
   }
   */
-  // well if htere are no upper cases
+  // well if there are no upper cases
   std::sort(str.begin(),str.end());
   return str;
-
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << AlphabetSoup(coderbyteInternalStdinFunction(stdin));
+  std::cout << AlphabetSoup(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

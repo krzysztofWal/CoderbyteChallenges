@@ -20,7 +20,6 @@ Optimal: o(n), achieved: o(n)
 #include <vector>
 #include <algorithm>
 #include <iostream>
-using namespace std;
 
 struct {
   bool operator()(const std::pair<size_t, size_t> &p1, 
@@ -56,11 +55,9 @@ std::string TwoSum(int arr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << TwoSum(A, arrLength);
+  std::cout << TwoSum(A, arrLength);
   return 0;
-    
 }

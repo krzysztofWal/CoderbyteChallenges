@@ -15,10 +15,8 @@ Optimal: o(-), achieved: o(-) - not calculated
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 std::string OtherProducts(int arr[], int arrLength) {
-  
   // code goes here
   size_t prod;
   size_t stop;
@@ -34,15 +32,12 @@ std::string OtherProducts(int arr[], int arrLength) {
   }
   tmp.pop_back();
   return tmp;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << OtherProducts(A, arrLength);
+  std::cout << OtherProducts(A, arrLength);
   return 0;
-    
 }

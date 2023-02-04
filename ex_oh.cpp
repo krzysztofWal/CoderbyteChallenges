@@ -13,10 +13,7 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <algorithm>
-using namespace std;
-
-string ExOh(string str) {
-  
+std::string ExOh(std::string str) {
   // code goes here 
   size_t x_cnt{};
   size_t o_cnt{};
@@ -24,13 +21,10 @@ string ExOh(string str) {
     [&](const char &c){if(c=='x'){x_cnt++;} else {o_cnt++;}});
   if (x_cnt == o_cnt) {return "true";}
   return "false";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << ExOh(coderbyteInternalStdinFunction(stdin));
+  std::cout << ExOh(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

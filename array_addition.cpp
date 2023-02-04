@@ -15,10 +15,7 @@ Optimal: o(n^2), achieved: o(n^2)
 #include <string>
 #include <algorithm>
 
-using namespace std;
-
-string ArrayAddition(int arr[],int N) { 
-	
+std::string ArrayAddition(int arr[],int N) { 
   int max{*std::max_element(arr,arr+N)};
   int sum{};
   size_t k{};
@@ -48,13 +45,11 @@ string ArrayAddition(int arr[],int N) {
 }
 
 int main() { 
-   
   // keep this function call here
   /* Note: In C++ you first have to initialize an array and set 
      it equal to the stdin to test your code with arrays. */
      
   int A[] = gets(stdin);
-  cout << ArrayAddition(A, sizeof(A) / sizeof(*A));
+  std::cout << ArrayAddition(A, sizeof(A) / sizeof(*A));
   return 0;
-    
 }

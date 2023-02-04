@@ -11,8 +11,6 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
-
 int FirstFactorial(int num) {
   // code goes here  
   int sum=1;
@@ -21,9 +19,7 @@ int FirstFactorial(int num) {
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << FirstFactorial(coderbyteInternalStdinFunction(stdin));
+  std::cout << FirstFactorial(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

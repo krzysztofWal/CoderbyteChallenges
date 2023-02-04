@@ -18,10 +18,8 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <algorithm>
-using namespace std;
 
-string OverlappingRanges(int arr[], int arrLength) {
-
+std::string OverlappingRanges(int arr[], int arrLength) {
   // code goes here  
   const int a{arr[0]};  const int b{arr[1]};
   const int c{arr[2]};  const int d{arr[3]};
@@ -32,8 +30,6 @@ string OverlappingRanges(int arr[], int arrLength) {
     return "true";
   }
   return "false";
-  
-
 }
 
 int main(void) { 
@@ -41,7 +37,7 @@ int main(void) {
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << OverlappingRanges(A, arrLength);
+  std::cout << OverlappingRanges(A, arrLength);
   return 0;
     
 }

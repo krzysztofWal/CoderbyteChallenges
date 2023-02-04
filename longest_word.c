@@ -14,7 +14,6 @@ Optimal: o(n), achieved: o(n)
 #include <string.h>
 
 void LongestWord(char * sen) {
-
   // code goes here  
   unsigned long iter = 0;
   unsigned long counter = 0;
@@ -80,14 +79,10 @@ void LongestWord(char * sen) {
   for (iter=position_start;iter<=position_end;iter++){
     putchar((int)*(copy_arr+iter));
   }
-
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   LongestWord(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

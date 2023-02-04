@@ -18,7 +18,6 @@ Optimal: o(-), achieved: o(n)
 #include <string>
 #include <queue>
 
-
 std::string ArrayRotation(int arr[], int arrLength) {
   std::string retVal;
   int i{ arr[0] };
@@ -30,11 +29,9 @@ std::string ArrayRotation(int arr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << ArrayRotation(A, arrLength);
   return 0;
-    
 }

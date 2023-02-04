@@ -21,7 +21,6 @@ char shift_char(char s, int st, int en, int num) {
 }
 
 string CaesarCipher(string str, int num) {
-  
   char s;
   // code goes here  
   for (int i{0}; i<str.length(); i++) {
@@ -33,13 +32,10 @@ string CaesarCipher(string str, int num) {
      }
   }
   return str;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   cout << CaesarCipher(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

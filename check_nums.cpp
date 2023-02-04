@@ -10,10 +10,8 @@ Optimal: o(-), achieved: o(-) - not being calculated
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 std::string CheckNums(int num1, int num2) {
-  
   if (num2 > num1) {
     return "true";
   } else if (num2 < num1) {
@@ -21,13 +19,10 @@ std::string CheckNums(int num1, int num2) {
   } else {
     return "-1";
   }
-
 }
 
-int main(void) { 
-   
+int main(void) {
   // keep this function call here
-  cout << CheckNums(coderbyteInternalStdinFunction(stdin));
+  std::cout << CheckNums(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

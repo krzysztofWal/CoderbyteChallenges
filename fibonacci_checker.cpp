@@ -13,7 +13,6 @@ Optimal: o(-), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 // b - base
 double MyLog(double a, double b) {
@@ -21,7 +20,6 @@ double MyLog(double a, double b) {
 }
 
 std::string FibonacciChecker(int num) {
-  
   // code goes here
   // https://r-knott.surrey.ac.uk/Fibonacci/fibFormula.html#section1.1
   const double fi = (1+std::sqrt(5.))/2;
@@ -38,7 +36,6 @@ std::string FibonacciChecker(int num) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   // int arr[] = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352};
   // size_t sum{};
@@ -49,7 +46,6 @@ int main(void) {
   //   if (i > 4 && FibonacciChecker(arr[i]-1)=="yes") {std::cout << arr[i]-1 << std::endl;}  
   // }
   // std::cout << sum << " " << sizeof(arr)/sizeof(*arr) << std::endl;
-  cout << FibonacciChecker(coderbyteInternalStdinFunction(stdin));
+  std::cout << FibonacciChecker(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

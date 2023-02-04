@@ -20,14 +20,13 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 #include <algorithm>
 #include <cmath>
-using namespace std;
 
 #define FLOAT_PREC 1
 
-string MovingMedian(int arr[], int arrLength) {
+std::string MovingMedian(int arr[], int arrLength) {
   
     // code goes here
-    string tmp{};
+    std::string tmp{};
     int N{ *arr }; // window size
     int mdl{}; // index of middle element (or 'right middle' when even number of elements)
     int end_my{}; // index of last used element + 1 (offset for n_th element)
@@ -40,19 +39,19 @@ string MovingMedian(int arr[], int arrLength) {
             
             end_my = ((i > N) ? N : i);
             mdl = static_cast<int>(end_my/2); // calculate nth_element's position
-            nth_element(arr_cp, arr_cp + mdl, arr_cp + end_my);  // set proper nth element
+            std::nth_element(arr_cp, arr_cp + mdl, arr_cp + end_my);  // set proper nth element
 
             // if nth_element is in the middle
             if (end_my % 2 != 0) { 
-                tmp += to_string(arr_cp[mdl]);
+                tmp += std::to_string(arr_cp[mdl]);
             } else {
              // if nth_element not in the middle, take nth and nth-1 and calculate mean
-                nth_element(arr_cp, arr_cp + mdl - 1, arr_cp + end_my); // get element before tmp_nr
+                std::nth_element(arr_cp, arr_cp + mdl - 1, arr_cp + end_my); // get element before tmp_nr
              //   printArray<int>(arr_cp, N);
                 if ((arr_cp[mdl] + arr_cp[mdl - 1]) % 2 == 0) { // when mean is an integer
-                    tmp += to_string((arr_cp[mdl] + arr_cp[mdl-1]) / 2);
+                    tmp += std::to_string((arr_cp[mdl] + arr_cp[mdl-1]) / 2);
                 } else { // when mean is floting point
-                    tmp += to_string((arr_cp[mdl] + *(arr_cp + mdl)) / 2.0);
+                    tmp += std::to_string((arr_cp[mdl] + *(arr_cp + mdl)) / 2.0);
                     tmp.resize(tmp.length() - 6 + FLOAT_PREC); // given default floating point sprint precision == 6
                 }
             }
@@ -66,15 +65,13 @@ string MovingMedian(int arr[], int arrLength) {
         tmp.pop_back(); // remove last comma
         return tmp;
     }
-    catch (exception& ex) { cout << ex.what() << endl; return ""; } 
+    catch (std::exception& ex) { std::cout << ex.what() << std::endl; return ""; } 
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << MovingMedian(A, arrLength);
+  std::cout << MovingMedian(A, arrLength);
   return 0;
-    
 }

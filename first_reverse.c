@@ -13,18 +13,14 @@ Optimal: o(n), achieved: o(n)
 
 void FirstReverse(char * str) {
   // code goes here  
-
   for (unsigned long i = strlen(str)-1; i>0 ;i--) {
     printf("%c",*(str+i));
   }
   printf("%c",*str);
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   FirstReverse(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

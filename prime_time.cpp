@@ -11,24 +11,18 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 std::string PrimeTime(int num) {
-  
   // code goes here  
-  
   if (num <= 1 || (num % 2 == 0 && num != 2)) {return "false";}
   for (int i{3};i<=sqrt(num);i+=2) {
     if (num%i==0) {return "false";}
   }
   return "true";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << PrimeTime(coderbyteInternalStdinFunction(stdin));
+  std::cout << PrimeTime(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

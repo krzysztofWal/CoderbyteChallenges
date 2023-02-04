@@ -17,7 +17,6 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 
 const char * ArithGeoII(int arr[], const size_t arrLength) {
-  
   // code goes here  
   size_t ind{arrLength-1};
   int  tmpDiffArith{};
@@ -42,15 +41,12 @@ const char * ArithGeoII(int arr[], const size_t arrLength) {
   } else {
     return "-1";
   }
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << ArithGeoII(A, arrLength);
   return 0;
-    
 }

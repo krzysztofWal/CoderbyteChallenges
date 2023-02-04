@@ -17,15 +17,12 @@ separated by a space: -1 -1 2 2 3 9
 
 Optimal: o(n), achieved: o(n)
 */
-
 #include <iostream>
 #include <string>
 #include <stack>
 
 std::string NearestSmallerValues(int arr[], int arrLength) {
-  
   // code goes here  
-
   std::string tmp;
   std::stack<int> monStack;
 
@@ -44,15 +41,12 @@ std::string NearestSmallerValues(int arr[], int arrLength) {
   }
 
   return tmp;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << NearestSmallerValues(A, arrLength);
   return 0;
-    
 }

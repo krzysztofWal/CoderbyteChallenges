@@ -23,9 +23,7 @@ int VowelCount(const std::string &str) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << VowelCount(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

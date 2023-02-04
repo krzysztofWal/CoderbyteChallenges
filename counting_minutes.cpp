@@ -14,11 +14,10 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <string>
 #include <array>
 #include <string_view>
-using namespace std;
 
-int CountingMinutesI(string str) {
+int CountingMinutesI(std::string str) {
   size_t pos{}, pos_{}, ind{};
-  std::array<string,4> arr;
+  std::array<std::string,4> arr;
   int diff{};
 
   while(pos < str.length()) {
@@ -36,9 +35,7 @@ int CountingMinutesI(string str) {
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << CountingMinutesI(coderbyteInternalStdinFunction(stdin));
+  std::cout << CountingMinutesI(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

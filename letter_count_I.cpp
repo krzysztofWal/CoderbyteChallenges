@@ -49,13 +49,10 @@ std::string_view LetterCountI(const std::string &str) {
     if (posVec.at(pos).second > temp+2) {temp = pos;} 
   }
   return ((temp!=-1) ? strV.substr( posVec.at(temp-1).first+1, posVec.at(temp).first - posVec.at(temp-1).first-1) : std::string_view("-1") );
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << LetterCountI(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

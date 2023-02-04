@@ -12,11 +12,8 @@ Optimal: o(-), achieved: o(-) - not calculated
 
 #include <iostream>
 #include <string>
-#include <map>
-#include <cmath>
 
 int Division(int n1, int n2) {
-  
   // code goes here
   int rest{};
   while (true) {
@@ -25,13 +22,10 @@ int Division(int n1, int n2) {
       else {break;}
   }
   return n2;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << Division(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

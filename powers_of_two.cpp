@@ -13,23 +13,19 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
-
 const char * PowersofTwo(int num) {
-  
   // code goes here
   while (num > 1) {
     if (num % 2 != 0) return "false";
     num = num/2;
   }
   return "true";
-
 }
 
 int main(void) { 
    
   // keep this function call here
-  cout << PowersofTwo(coderbyteInternalStdinFunction(stdin));
+  std::cout << PowersofTwo(coderbyteInternalStdinFunction(stdin));
   return 0;
     
 }

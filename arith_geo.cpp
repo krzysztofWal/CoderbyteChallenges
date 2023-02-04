@@ -15,10 +15,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-string ArithGeo(int arr[], size_t arrLength) {
-  
+std::string ArithGeo(int arr[], size_t arrLength) {
   // code goes here 
   size_t ind{arrLength-1};
   double temp{};
@@ -36,15 +34,12 @@ string ArithGeo(int arr[], size_t arrLength) {
   }
   if (ind != arrLength-1) {return "Arithmetic";}
   return "-1";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << ArithGeo(A, arrLength);
+  std::cout << ArithGeo(A, arrLength);
   return 0;
-    
 }

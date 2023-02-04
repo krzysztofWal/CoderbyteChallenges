@@ -43,7 +43,6 @@ std::unordered_set<std::string_view> GetSet(const std::string_view &sv) {
 }
 
 string WordSplit(string strArr[], int arrLength) {
-  
   // code goes here
   std::string_view fView = strArr[0];
   std::string_view sView = strArr[1];
@@ -57,15 +56,12 @@ string WordSplit(string strArr[], int arrLength) {
   }
   
   return "not possible";
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   cout << WordSplit(A, arrLength);
   return 0;
-    
 }

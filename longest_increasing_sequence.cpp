@@ -19,7 +19,6 @@ Optimal: o(n log n), achieved: o(n log n)
 #include <algorithm>
 
 int LongestIncreasingSequence(int arr[], int arrLength) {
-
     // code goes here  
     size_t cnt{ 1 };
     std::vector<int> withEnds{ arr[0] };
@@ -47,16 +46,12 @@ int LongestIncreasingSequence(int arr[], int arrLength) {
     }
  
     return  withEnds.size();
-
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << LongestIncreasingSequence(A, arrLength);
   return 0;
-    
 }

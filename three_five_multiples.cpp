@@ -12,10 +12,8 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <set>
-using namespace std;
 
 int ThreeFiveMultiples(int num) {
-  
   // code goes here  
   int cnt{}, fives{5}, threes{3};
   int sum{};
@@ -31,13 +29,10 @@ int ThreeFiveMultiples(int num) {
   }
 
   return sum;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << ThreeFiveMultiples(coderbyteInternalStdinFunction(stdin));
+  std::cout << ThreeFiveMultiples(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

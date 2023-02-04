@@ -15,7 +15,6 @@ Optimal: o(n), achieved: o(n)
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
 bool MeanMode(int arr[], int arrLength) {
   // code goes here  
@@ -43,11 +42,9 @@ bool MeanMode(int arr[], int arrLength) {
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << MeanMode(A, arrLength);
+  std::cout << MeanMode(A, arrLength);
   return 0;
-    
 }

@@ -16,7 +16,6 @@ Optimal: o(n), achieved: o(n)
 using namespace std;
 
 size_t HammingDistance(string strArr[], int arrLength) {
-  
   // code goes here
   std::string s1 = strArr[0];
   std::string s2 = strArr[1];
@@ -27,15 +26,12 @@ size_t HammingDistance(string strArr[], int arrLength) {
   }
 
   return n;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   cout << HammingDistance(A, arrLength);
   return 0;
-    
 }

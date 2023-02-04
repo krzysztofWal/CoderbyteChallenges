@@ -15,10 +15,8 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <iostream>
 #include <string>
 #include <array>
-using namespace std;
 
 int CoinDeterminer(int num) {
-  
   // this brilliant solution is not mine, it is taken from 
   // https://math.stackexchange.com/questions/4181564/coindeterminer-by-modulo
   // also there is a good explanation, on which that here is based
@@ -47,9 +45,7 @@ int CoinDeterminer(int num) {
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << CoinDeterminer(coderbyteInternalStdinFunction(stdin));
+  std::cout << CoinDeterminer(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

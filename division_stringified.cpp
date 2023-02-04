@@ -12,14 +12,12 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 std::string DivisionStringified(int num1, int num2) {
-  
   // code goes here
   int res = round(num1/static_cast<double>(num2));
   int cnt{1}, diff{10};
-  string str;
+  std::string str;
 
   while (diff > 9) {
     diff = res / pow(10,cnt++);
@@ -35,13 +33,10 @@ std::string DivisionStringified(int num1, int num2) {
   str +=  to_string(res);
 
   return str;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   cout << DivisionStringified(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

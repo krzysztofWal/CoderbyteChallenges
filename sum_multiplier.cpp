@@ -20,23 +20,18 @@ Optimal: o(n), achieved: o(n)
 using std::cout;
 
 const char * SumMultiplier(int arr[], const size_t arrLength) {
-  
   // code goes here 
   int sum{2 * std::accumulate(arr, arr+arrLength, 0)};
   std::nth_element(arr,arr+arrLength-1,arr+arrLength);
   std::nth_element(arr,arr+arrLength-2,arr+arrLength);
   if (arr[arrLength-2] * arr[arrLength-1] > sum) return "true"; 
   return "false";
-
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   int A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   cout << SumMultiplier(A, arrLength);
   return 0;
-    
 }

@@ -11,7 +11,6 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
 bool PrimeTime(int num) {
   for (int i{2};i<=sqrt(num);i++) {
@@ -22,7 +21,6 @@ bool PrimeTime(int num) {
 }
 
 int PrimeMover(int num) {
-  
   int cnt{1};
   int i{3};
 
@@ -33,14 +31,10 @@ int PrimeMover(int num) {
   }
   // code goes here  
   return i-2;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  // cout << PrimeTime(4);
-  cout << PrimeMover(coderbyteInternalStdinFunction(stdin));
+  std::cout << PrimeMover(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

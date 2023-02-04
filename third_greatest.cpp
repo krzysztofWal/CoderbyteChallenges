@@ -33,7 +33,6 @@ void PutToVec(size_t opt, std::vector<std::pair<size_t,int>> &v, std::pair<size_
 }
 
 std::string ThirdGreatest(std:: string strArr[], size_t const arrLength) {
-  
   // code goes here
   std::vector<std::pair<size_t,int>> max(3);
   std::vector<size_t> len(arrLength);
@@ -56,17 +55,13 @@ std::string ThirdGreatest(std:: string strArr[], size_t const arrLength) {
     //           strArr[max.at(2).first] << std::endl; 
   }
 
-
   return strArr[max.at(2).first];
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::string A[] = coderbyteInternalStdinFunction(stdin);
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << ThirdGreatest(A, arrLength);
   return 0;
-    
 }

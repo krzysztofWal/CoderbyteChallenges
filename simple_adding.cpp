@@ -10,23 +10,18 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 int SimpleAdding(int num) {
-
   // code goes here
   int sum{};
   for (;num>0; num--) {
     sum += num;
   }
   return sum;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
-  cout << SimpleAdding(coderbyteInternalStdinFunction(stdin));
+  std::cout << SimpleAdding(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }

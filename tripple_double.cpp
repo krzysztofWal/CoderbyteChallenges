@@ -16,7 +16,6 @@ Optimal: o(-), achieved: o(-) - not calculated
 #include <unordered_set>
 
 int TripleDouble(int num1, int num2) {
-  
   // code goes here  
   std::string sNum1 = std::to_string(num1);
   std::string sNum2 = std::to_string(num2);
@@ -34,13 +33,10 @@ int TripleDouble(int num1, int num2) {
     }
   }
   return 0;
-
 }
 
 int main(void) { 
-   
   // keep this function call here
   std::cout << TripleDouble(coderbyteInternalStdinFunction(stdin));
   return 0;
-    
 }
