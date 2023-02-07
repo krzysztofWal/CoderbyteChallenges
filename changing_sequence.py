@@ -1,4 +1,5 @@
 # Changing Sequence
+# #array #search 
 # 
 # Have the function ChangingSequence(arr) take the array of numbers stored in arr and
 # return the index at which the numbers stop increasing and begin decreasing or stop
@@ -24,4 +25,4 @@ def ChangingSequence(arr):
   return -1
 
 # keep this function call here 
-print(ChangingSequence(input()))
+print(ChangingSequence([1, 4, 5, 7]))

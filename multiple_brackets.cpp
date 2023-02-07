@@ -1,5 +1,7 @@
 /*
 Multiple Brackets
+#stack #search 
+
 
 Have the function MultipleBrackets(str) take the str parameter being passed and return
 1 #ofBrackets if the brackets are correctly matched and each one is accounted for.

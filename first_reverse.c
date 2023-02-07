@@ -21,6 +21,7 @@ void FirstReverse(char * str) {
 
 int main(void) { 
   // keep this function call here
-  FirstReverse(coderbyteInternalStdinFunction(stdin));
+  char * str = "Test string";
+  FirstReverse(str);
   return 0;
 }
