@@ -1,5 +1,6 @@
 /*
 AB Check
+#regex #string manipulation 
 
 Have the function ABCheck(str) take the str parameter being passed and return the
 string true if the characters a and b are separated by exactly 3 places anywhere

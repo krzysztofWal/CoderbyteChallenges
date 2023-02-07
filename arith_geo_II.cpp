@@ -1,5 +1,6 @@
 /*
 Arith Geo II
+#sequences #array 
 
 Have the function ArithGeoII(arr) take the array of numbers stored in arr and return
 the string "Arithmetic" if the sequence follows an arithmetic pattern or return "Geometric"

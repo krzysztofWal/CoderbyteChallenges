@@ -1,5 +1,6 @@
 /*
 Second Great Low
+#array #sort #search 
 
 Have the function SecondGreatLow(arr) take the array of numbers stored in arr and
 return the second lowest and second greatest numbers, respectively, separated by

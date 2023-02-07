@@ -1,5 +1,6 @@
 /*
 Division
+#algebra 
 
 Have the function Division(num1,num2) take both parameters being passed and return
 the Greatest Common Factor. That is, return the greatest number that evenly goes

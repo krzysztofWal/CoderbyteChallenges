@@ -1,5 +1,6 @@
 /*
 Two Sum
+#hashmap #dynamic #array #search 
 
 Have the function TwoSum(arr) take the array of integers stored in arr, and determine
 if any two numbers (excluding the first element) in the array can sum up to the first

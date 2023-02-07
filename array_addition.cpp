@@ -1,5 +1,6 @@
 /*
 Array addition
+#dynamic #array #recursion #search 
 
 Have the function ArrayAddition(arr) take the array of numbers stored in arr and
 return the string true if any combination of numbers in the array (excluding the

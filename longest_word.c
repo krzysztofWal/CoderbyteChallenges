@@ -1,5 +1,6 @@
 /*
 Longest Word
+#tree #search #string manipulation 
 
 Have the function LongestWord(sen) take the sen parameter being passed and return
 the longest word in the string. If there are two or more words that are the same

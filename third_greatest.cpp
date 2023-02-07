@@ -1,5 +1,6 @@
 /*
 Third greatest
+#array #sort #search 
 
 Have the function ThirdGreatest(strArr) take the array of strings stored in strArr
 and return the third largest word within it. So for example: if strArr is ["hello",

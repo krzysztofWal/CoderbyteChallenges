@@ -1,5 +1,6 @@
 /*
 Vowel Count
+#regex #search #string manipulation 
 
 Have the function VowelCount(str) take the str string parameter being passed and
 return the number of vowels the string contains (ie. "All cows eat grass and moo"

@@ -1,5 +1,6 @@
 /*
 Counting Minutes I
+#search #string manipulation 
 
 Have the function CountingMinutesI(str) take the str parameter being passed which
 will be two times (each properly formatted with a colon and am or pm) separated by

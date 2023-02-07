@@ -1,5 +1,6 @@
 /*
 Letter changes
+#string manipulation 
 
 Have the function LetterChanges(str) take the str parameter being passed and modify
 it using the following algorithm. Replace every letter in the string with the letter

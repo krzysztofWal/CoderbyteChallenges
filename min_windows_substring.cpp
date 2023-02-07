@@ -1,5 +1,6 @@
 /*
 Min Windows Substring
+#hashmap #tree #search #string manipulation 
 
 Have the function MinWindowSubstring(strArr) take the array of strings stored in
 strArr, which will contain only two strings, the first parameter being the string

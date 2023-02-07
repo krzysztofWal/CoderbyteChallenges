@@ -1,5 +1,6 @@
 /*
 ThreeFive Multiples
+#search 
 
 Have the function ThreeFiveMultiples(num) return the sum of all the multiples of
 3 and 5 that are below num. For example: if num is 10, the multiples of 3 and 5 that

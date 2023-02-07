@@ -1,5 +1,6 @@
 /*
 Pentagonal Number
+#combinatorics #sequences 
 
 Have the function PentagonalNumber(num) read num which will be a positive integer
 and determine how many dots exist in a pentagonal shape around a center dot on the

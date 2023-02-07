@@ -1,5 +1,6 @@
 /*
 Triple double
+#search 
 
 Have the function TripleDouble(num1,num2) take both parameters being passed, and
 return 1 if there is a straight triple of a number at any place in num1 and also

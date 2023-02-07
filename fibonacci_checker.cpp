@@ -1,5 +1,6 @@
 /*
 Fibonnacci Checker
+#sequences 
 
 Have the function FibonacciChecker(num) return the string yes if the number given
 is part of the Fibonacci sequence. This sequence is defined by: Fn = Fn-1 + Fn-2,

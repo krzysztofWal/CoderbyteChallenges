@@ -1,5 +1,6 @@
 /*
 Super Increasing
+#array 
 
 Have the function Superincreasing(arr) take the array of numbers stored in arr and
 determine if the array forms a superincreasing sequence where each element in the

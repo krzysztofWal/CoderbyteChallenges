@@ -1,5 +1,6 @@
 /*
 Question marks
+#hashmap #tree #search #string manipulation 
 
 Have the function QuestionsMarks(str) take the str string parameter, which will contain
 single digit numbers, letters, and question marks, and check if there are exactly

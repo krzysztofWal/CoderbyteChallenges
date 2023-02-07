@@ -1,5 +1,6 @@
 /*
 Prime Checker
+#prime 
 
 Have the function PrimeChecker(num) take num and return 1 if any arrangement of num
 comes out to be a prime number, otherwise return 0. For example: if num is 910, the

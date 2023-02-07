@@ -1,5 +1,6 @@
 /*
 Number Search
+#search 
 
 Have the function NumberSearch(str) take the str parameter, search for all the numbers
 in the string, add them together, then return that final number divided by the total

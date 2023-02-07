@@ -1,5 +1,6 @@
 /*
 Bracket Matcher
+#stack #recursion #tree 
 
 Have the function BracketMatcher(str) take the str parameter being passed and return
 1 if the brackets are correctly matched and each one is accounted for. Otherwise

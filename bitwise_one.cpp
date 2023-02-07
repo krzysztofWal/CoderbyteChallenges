@@ -1,5 +1,6 @@
 /*
 Bitwise One
+#bitwise operations #array #search 
 
 Have the function BitwiseOne(strArr) take the array of strings stored in strArr,
 which will only contain two strings of equal length that represent binary numbers,

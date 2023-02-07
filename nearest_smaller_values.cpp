@@ -1,5 +1,6 @@
 /*
 Nearest Smaller Values
+#data science #dynamic #array 
 
 Have the function NearestSmallerValues(arr) take the array of integers stored in
 arr, and for each element in the list, search all the previous values for the nearest

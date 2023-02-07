@@ -1,5 +1,6 @@
 /*
 Mean Mode
+#hashmap #array 
 
 Have the function MeanMode(arr) take the array of numbers stored in arr and return
 1 if the mode equals the mean, 0 if they don't equal each other (ie. [5, 3, 3, 3,

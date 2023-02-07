@@ -1,5 +1,6 @@
 /*
 Simple Symbols
+#regex #string manipulation 
 
 Have the function SimpleSymbols(str) take the str parameter being passed and determine
 if it is an acceptable sequence by either returning the string true or false. The

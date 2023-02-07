@@ -1,5 +1,6 @@
 /*
 Coin Determiner
+#optimization #search 
 
 Have the function CoinDeterminer(num) take the input, which will be an integer ranging
 from 1 to 250, and return an integer output that will specify the least number of

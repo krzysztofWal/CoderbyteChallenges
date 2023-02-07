@@ -1,5 +1,6 @@
 /*
 Sum Multiplier
+#sequences #array 
 
 Have the function SumMultiplier(arr) take the array of numbers stored in arr and
 return the string true if any two numbers can be multiplied so that the answer is

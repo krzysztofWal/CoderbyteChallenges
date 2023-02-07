@@ -1,5 +1,6 @@
 /*
 Look Say Sequence
+#sequences #array 
 
 Have the function LookSaySequence(num) take the num parameter being passed and return
 the next number in the sequence according to the following rule: to generate the

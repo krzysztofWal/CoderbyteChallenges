@@ -1,5 +1,6 @@
 /*
 Longest Increasing Sequence
+#dynamic #array #sort 
 
 Have the function LongestIncreasingSequence(arr) take the array of positive integers
 stored in arr and return the length of the longest increasing subsequence (LIS).

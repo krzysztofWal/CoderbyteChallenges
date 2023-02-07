@@ -1,5 +1,6 @@
 /*
 Longest Consecutive
+#dynamic #sequences #array #sort 
 
 Have the function LongestConsecutive(arr) take the array of positive integers stored
 in arr and return the length of the longest consecutive subsequence (LCS). An LCS

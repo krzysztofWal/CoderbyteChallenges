@@ -1,5 +1,6 @@
 /*
 Boggle Solver
+#matrix #hashmap #dynamic 
 
 Have the function BoggleSolver(strArr) read the array of strings stored in strArr,
 which will contain 2 elements: the first element will represent a 4x4 matrix of letters,

@@ -1,5 +1,6 @@
 /*
 LetterCountI
+#hashmap #search #string manipulation 
 
 Have the function LetterCountI(str) take the str parameter being passed and return
 the first word with the greatest number of repeated letters. For example: 

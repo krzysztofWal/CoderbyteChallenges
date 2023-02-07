@@ -1,5 +1,6 @@
 /*
 Other Products
+#array 
 
 Have the function OtherProducts(arr) take the array of numbers stored in arr and
 return a new list of the products of all the other numbers in the array for each

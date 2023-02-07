@@ -1,5 +1,6 @@
 /*
 FizzBuzz
+#string manipulation 
 
 Have the function FizzBuzz(num) take the num parameter being passed and return all
 the numbers from 1 to num separated by spaces, but replace every number that is divisible

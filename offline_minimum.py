@@ -1,4 +1,5 @@
 # Off Line Minimum
+# #array #search 
 # 
 # Have the function OffLineMinimum(strArr) take the strArr parameter being passed which
 # will be an array of integers ranging from 1...n and the letter "E" and return the

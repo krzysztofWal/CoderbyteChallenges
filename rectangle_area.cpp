@@ -1,5 +1,6 @@
 /*
 Rectangle Area
+#geometry #array 
 
 Have the function RectangleArea(strArr) take the array of strings stored in strArr,
 which will only contain 4 elements and be in the form (x y) where x and y are both

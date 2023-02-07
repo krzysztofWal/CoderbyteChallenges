@@ -1,5 +1,6 @@
 /*
 Moving Median
+#data science #array #search 
 
 Have the function MovingMedian(arr) read the array of numbers stored in arr which
 will contain a sliding window size, N, as the first element in the array and the
