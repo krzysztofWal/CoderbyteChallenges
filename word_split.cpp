@@ -2,7 +2,6 @@
 Word Split
 #hashmap #dynamic #array #search 
 
-
 Have the function WordSplit(strArr) read the array of strings stored in strArr, which
 will contain 2 elements: the first element will be a sequence of characters, and
 the second element will be a long string of comma-separated words, in alphabetical
