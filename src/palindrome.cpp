@@ -41,5 +41,6 @@ std::string Palindrome(std::string str) {
 int main(void) { 
   // keep this function call here
   std::cout << Palindrome(coderbyteInternalStdinFunction(stdin));
+  // std::cout << Palindrome("racecar");
   return 0;
 }
