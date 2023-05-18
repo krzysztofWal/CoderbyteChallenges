@@ -18,11 +18,16 @@ void FirstReverse(char * str) {
     printf("%c",*(str+i));
   }
   printf("%c",*str);
+
+  #ifdef CMAKE_CODERBYTE_SOLUTIONS_BUILD
+    free(str);
+  #endif // CMAKE_CODERBYTE_SOLUTIONS_BUILD
+
 }
 
 int main(void) { 
   // keep this function call here
-  char * str = "Test string";
+  char * str = coderbyteInternalStdinFunction(stdin);
   FirstReverse(str);
   return 0;
 }

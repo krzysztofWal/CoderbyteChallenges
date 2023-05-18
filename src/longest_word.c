@@ -80,6 +80,11 @@ void LongestWord(char * sen) {
   for (iter=position_start;iter<=position_end;iter++){
     putchar((int)*(copy_arr+iter));
   }
+
+  #ifdef CMAKE_CODERBYTE_SOLUTIONS_BUILD
+      free(sen);
+  #endif // CMAKE_CODERBYTE_SOLUTIONS_BUILD
+
 }
 
 int main(void) { 

@@ -1,6 +1,5 @@
 **/challenges_list.xlsx
 **/clipboard_line_split.sh
 **/dash_insert.cpp
-**/bin
 **/build/
-
+build.sh

@@ -50,6 +50,11 @@ void QuestionsMarks(char * str) {
     for (int i=0;i<cnt;i++){printf("\\%i ", positions[i]);}
     for (int i=0;i<cnt;i++){printf("%c ", str[positions[i]]);}
   }
+
+  #ifdef CMAKE_CODERBYTE_SOLUTIONS_BUILD
+      free(str);
+  #endif // CMAKE_CODERBYTE_SOLUTIONS_BUILD
+
 }
 
 int main(void) { 
