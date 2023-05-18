@@ -27,10 +27,10 @@ int BracketCombinations(int num) {
 
 }
 
-int main(void) { 
+int main(void) {
    
   // keep this function call here
-  cout << BracketCombinations(coderbyteInternalStdinFunction(stdin));
+  std::cout << BracketCombinations(coderbyteInternalStdinFunction(stdin));
   return 0;
     
 }

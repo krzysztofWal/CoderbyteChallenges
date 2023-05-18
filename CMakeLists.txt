@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
+
 project(CoderbyteChallenges)
+
+add_subdirectory(tools/DummyInputLib)
 
 FILE(GLOB_RECURSE cpp_executables_ "src/*.cpp")
 
@@ -19,6 +22,15 @@ foreach(exe_ ${cpp_executables_})
     add_executable(
         ${exe_name_}
             ${exe_}
+    )
+
+    # automatically add include for library header
+    target_compile_options(
+        ${exe_name_} PRIVATE -include ${lib_header_name_}
+    )
+
+    target_link_libraries(
+        ${exe_name_} PRIVATE ${input_lib_name_}
     )
 
 endforeach()
