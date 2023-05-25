@@ -25,15 +25,24 @@ std::string ArrayAddition(int arr[],int N) {
   for (size_t i{}; i < N; i++) {
     if (arr[i] != max) sum += arr[i];
   }
-  
+
+  //  sum of all non-max equals to max 
   if(max == sum) return "true";
 
+  // iterate over array
   for (size_t i{}; i < N; i++) {
+    // take it as a starting point if its not max
     if (arr[i] != max) {
       sum = 0;
       k = i + 1;
+      // iterate over remaining elements (that is excluding max and  arr[i])
+      // we use j as a condition in loop but we access the k-th element
+      // which starts at i+1 and is incremented in every loop pass
+      // if k reaches N that means that we now set it to zero
+      // and are accesing elements 'on the left-side' of i
       for (size_t j{}; j < N - 1; j++) {
         if (k == N) k = 0;
+        // here we also exclude max
         if (arr[k] != max) {
           sum += arr[k];
           if (sum == max) return "true";

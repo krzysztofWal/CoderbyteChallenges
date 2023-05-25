@@ -1,8 +1,8 @@
 /*
-Arith Geo
+Arith Geo II
 #sequences #array 
 
-Have the function ArithGeo(arr) take the array of numbers stored in arr and return
+Have the function ArithGeoII(arr) take the array of numbers stored in arr and return
 the string "Arithmetic" if the sequence follows an arithmetic pattern or return "Geometric"
 if it follows a geometric pattern. If the sequence doesn't follow either pattern
 return -1. An arithmetic sequence is one where the difference between each of the
@@ -15,32 +15,54 @@ Optimal: o(n), achieved: o(n)
 */
 
 #include <iostream>
-#include <string>
 
-std::string ArithGeo(int arr[], size_t arrLength) {
-  // code goes here 
+const char * ArithGeoII(int arr[], const size_t arrLength) {
+  // code goes here  
   size_t ind{arrLength-1};
-  double temp{};
+  int  tmp_diff{};
+  double tmp_ratio{};
+  bool canBeArith{true}, canBeGeo{true};
 
-  temp = arr[ind] / static_cast<double>(arr[ind-1]); 
-  while(--ind >= 1) {
-    if (temp != arr[ind] / static_cast<double>(arr[ind-1])) {ind = arrLength-1; break;}
-    temp = arr[ind] / static_cast<double>(arr[ind-1]);
-  } 
-  if (ind == arrLength-1) {temp = arr[ind] - arr[ind-1];}
-    else {return "Geometric";}
-  while(--ind >= 1) {
-    if (temp != arr[ind] - arr[ind-1]) {ind = arrLength-1; break;}
-    temp = arr[ind] - arr[ind-1];
+  // calculate arr[end]-arr[end-1] and arr[end]/arr[end-1]
+  int previous_diff{ arr[ind] - arr[ind - 1] };
+  double previous_ratio{ arr[ind] / static_cast<double>(arr[ind -1 ])};
+  ind--; // shift index to previous to last
+
+  // starting at the previous to last element
+  // if there is still a chance of it being either
+  while (ind > 0 && (canBeArith || canBeGeo) ) {
+    // calculate the difference and the ratio
+    tmp_diff = arr[ind] - arr[ind -1];
+    tmp_ratio = arr[ind] / static_cast<double>(arr[ind - 1]);
+    // if there is no more chance for it to be arithmetic set proper flag
+    if (tmp_diff != previous_diff) canBeArith = false;
+    // if there is no more chance for it to be geometric set proper flag
+    if (tmp_ratio != previous_ratio) canBeGeo = false;
+
+    previous_diff = tmp_diff;
+    previous_ratio = tmp_ratio;
+
+    ind--;
   }
-  if (ind != arrLength-1) {return "Arithmetic";}
-  return "-1";
+
+  // as all of the elements cannot be the same if it is not arithmetic
+  // it is either geometric or neither
+  if (canBeArith) {
+    return "Arithmetic";
+  } else if (canBeGeo) {
+    return "Geometric";
+  } else {
+    return "-1";
+  }
 }
 
+#ifndef CODERBYTE_CHALLENGES_TEST_CPP_FLAG // for use with google tests
 int main(void) { 
   // keep this function call here
-  int A[] = coderbyteInternalStdinFunction(stdin);
+  // int A[] = coderbyteInternalStdinFunction(stdin);
+  int A[] = {11, 13, 15, 17, 19};
   int arrLength = sizeof(A) / sizeof(*A);
-  std::cout << ArithGeo(A, arrLength);
+  std::cout << ArithGeoII(A, arrLength);
   return 0;
 }
+#endif
