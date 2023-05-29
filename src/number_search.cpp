@@ -16,6 +16,7 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 int NumberSearch(std::string str) {
   // code goes here

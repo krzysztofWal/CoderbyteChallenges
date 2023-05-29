@@ -15,9 +15,11 @@ Optimal: o(n), achieved: o(n)
 #include <set>
 
 int ThreeFiveMultiples(int num) {
+
   // code goes here  
   int cnt{}, fives{5}, threes{3};
   int sum{};
+  
   while (fives < num || threes < num) {
     if (fives < num) {
       sum += fives;

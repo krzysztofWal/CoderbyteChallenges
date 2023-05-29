@@ -21,14 +21,19 @@ Optimal: o(-), achieved: o(-) - not calculated
 
 double RectangleArea(std::string strArr[], int arrLength) {
   // code goes here
+
+  // array for storing all points coordinates
   std::array<double,8> pntArr;
+  // array for storing distances between each points (sides + diagonals)
   std::array<double,6> lenArr; 
   size_t sb{};
   // put coordinates in pntArr
   for (size_t i{}; i < arrLength; i++) {
+    // find space postion -> coordinates given as "(x y)"
     sb = strArr[i].find(" ");
-    pntArr[2*i] = std::stoi(strArr[i].substr(1,sb-1));
-    pntArr[2*i+1] = std::stoi(strArr[i].substr(sb+1,strArr[i].length()-1));
+    // extract numbers and put it in pntArr [x1 y1 x2 y2 x3 y3 x4 y4]
+    pntArr.at(2*i) = std::stoi(strArr[i].substr(1,sb-1));
+    pntArr.at(2*i+1) = std::stoi(strArr[i].substr(sb+1,strArr[i].length()-1));
   }
   // calculate distance between all points
   sb = 0;
@@ -37,14 +42,18 @@ double RectangleArea(std::string strArr[], int arrLength) {
       lenArr[sb++] = std::sqrt(std::pow(pntArr.at(2*j)-pntArr.at(2*i),2) + std::pow(pntArr.at(2*j+1)-pntArr.at(2*i+1),2));
     }
   }
-  // sort the distances between points and return first value multipled by second
+  // sort the distances between points
+  // first two values are shorter sides, next two values are longer sides
+  // and the two last (the longest) are the diagonals
   std::sort(lenArr.begin(),lenArr.end()); 
+  // multiply the lengths of the sides
   return lenArr.at(2)*lenArr.at(0);
 }
 
 int main(void) { 
   // keep this function call here
-  std::string A[] = coderbyteInternalStdinFunction(stdin);
+  // std::string A[] = coderbyteInternalStdinFunction(stdin);
+  std::string A[] = {"(1 -2)", "(3 -2)", "(1 3)", "(3 3)"};
   int arrLength = sizeof(A) / sizeof(*A);
   std::cout << RectangleArea(A, arrLength);
   return 0;

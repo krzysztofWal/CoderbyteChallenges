@@ -14,9 +14,8 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-using namespace std;
 
-size_t HammingDistance(string strArr[], int arrLength) {
+size_t HammingDistance(std::string strArr[], int arrLength) {
   // code goes here
   std::string s1 = strArr[0];
   std::string s2 = strArr[1];
@@ -29,10 +28,13 @@ size_t HammingDistance(string strArr[], int arrLength) {
   return n;
 }
 
+#ifndef CODERBYTE_CHALLENGES_TEST_CPP_FLAG // for use with google tests
 int main(void) { 
   // keep this function call here
-  string A[] = coderbyteInternalStdinFunction(stdin);
+  // string A[] = coderbyteInternalStdinFunction(stdin);
+  std::string A[] = {"codec" , "coder"};
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << HammingDistance(A, arrLength);
+  std::cout << HammingDistance(A, arrLength);
   return 0;
 }
+#endif

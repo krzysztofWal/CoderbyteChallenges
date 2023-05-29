@@ -24,10 +24,37 @@ std::string OverlappingRanges(int arr[], int arrLength) {
   // code goes here  
   const int a{arr[0]};  const int b{arr[1]};
   const int c{arr[2]};  const int d{arr[3]};
-  if  ((d-a+1>=arr[4] && c<=a) || 
-      (b-c+1>arr[4] && b<=d) || 
-      (a>=c && b<=d && b-a+1>=arr[4]) || 
-      (c>=a && d<=b && d-c+1>=arr[4])) {
+  const int x{arr[4]};
+  /* with four points there are four ways of overlapping ranges by x
+   more generally there are six ways they be positioned relative to each other
+   |-------| |-------|  -> no intersection
+   a       b c       d  
+   |-------| |-------|  -> no intersection
+   c       d a       b
+
+   |----------|
+        |------------|  -> 1) intersection = b-c+1
+   a    c     b      d
+
+   |----------|
+        |------------|  -> 2) intersection = d-a+1
+   c    a     d      b
+
+   |----------------|   -> 3) intersection = d-c+1
+      |----------|
+   a  c          d  b
+
+   |----------------|   -> 4) intersection = b-a+1
+       |----------|
+   c   a          b d
+
+  */
+  bool overlap_by_x = (d-a+1>=x && c<=a) || // 2
+                      (b-c+1>=x && b<=d) || // 1+1 because minimum x)
+                      (a>=c && b<=d && b-a+1>=x) || // 4
+                      (c>=a && d<=b && d-c+1>=x); // 3
+
+  if (overlap_by_x) {
     return "true";
   }
   return "false";

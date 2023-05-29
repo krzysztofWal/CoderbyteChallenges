@@ -24,24 +24,43 @@ Optimal: o(n), achieved: o(n)
 
 std::string NearestSmallerValues(int arr[], int arrLength) {
   // code goes here  
-  std::string tmp;
+  std::string finalSequence;
   std::stack<int> monStack;
 
+  // for all elements in an array
+  // logic here probably could be simplified - especially with the repeat of adding top
+  // of the stack to the final sequence
   for (size_t i{}; i < arrLength; i++) {
+    // if the stack is not empty and the element on top is smaller or equal to thr current array element
     if (!monStack.empty() && monStack.top() <= arr[i]) {
-      tmp += std::to_string(monStack.top());
+      // put the top of the stack into final Sequence
+      finalSequence += std::to_string(monStack.top());
     } else {
-      while (!monStack.empty() && monStack.top() > arr[i]) { monStack.pop(); }
-      if (!monStack.empty()) tmp += std::to_string(monStack.top());
+      // if the stack is emtpy or the current element is greater than whats on top of the stack
+      while (!monStack.empty() && monStack.top() > arr[i]) { 
+        // pop from the top of the stack until the element is smaller or equal  
+        monStack.pop(); 
+      }
+      // now the stack is either empty, in which case there is no smaller value to the left
+      // or the stack is not empty in which case on top of it is the searched value for this
+      // position - then add the top of the stack to the final sequence
+      if (!monStack.empty()) { finalSequence += std::to_string(monStack.top()); }
     }
     
-    if (monStack.empty()) tmp += "-1";
+    // if the stack is empty now, that means there were no smaller on the left to arr[i]
+    // add -1 to final sequence - this always happens for the first element (with index 0 that is)
+    if (monStack.empty()) finalSequence += "-1";
     
+    // push current element on the top of the stack
+    // if the stack was empty that means that arr[i] is the smallest up until now so
+    // no point in bothering with the previous one, if the stack was not empty
+    // it means that there were smaller ones, but this larger, current one
+    // may be smaller than what comes next, so save it
     monStack.push(arr[i]);
-    tmp += " ";
+    finalSequence += " ";
   }
 
-  return tmp;
+  return finalSequence;
 }
 
 int main(void) { 

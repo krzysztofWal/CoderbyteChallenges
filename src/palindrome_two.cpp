@@ -20,26 +20,47 @@ bool isalpha_m(char c) {
     return static_cast<bool>(std::isalpha(static_cast<unsigned char>(c)));
 }
 
+/* omits non alphanumerics */
 std::string PalindromeTwo(std::string str) {
   //code goes here
-  unsigned long long i{ 0 };
-  unsigned long long j{ str.length() - 1 };
-  bool con_end{}; 
-  bool con_beg{};
-  while (j >= 0 && i <= str.length() - 1 && i >= 0 && j <= str.length() - 1) {
-    while (!isalpha_m(str.at(i)) || !isalpha_m(str.at(j))) {
-        if (!isalpha_m(str.at(i))) {if (++i == str.length()) {i--; con_end = true;}}
-        if (!isalpha_m(str.at(j))) {if (--j == -1) {j++; con_beg = true;}}
-        if (con_beg && con_end) {break;}
+  // two indexes running from left to right and right to left
+  size_t i{ 0 };
+  size_t j{ str.length() - 1 };
+
+  bool foundNextAlphanum{true};
+
+  // while both indexes are in bounds
+  while ( (j >= 0 && i <= str.length() - 1) && (i >= 0 && j <= str.length() - 1) ) {
+   
+    // until both indexes are  alphanumeric
+    while ( !isalpha_m(str.at(i)) && i < str.length() - 1) {
+      i++;
+      if( i == str.length() - 1 ) { foundNextAlphanum = false; }
     }
-    if (!con_beg && !con_end &&tolower(str.at(i)) != tolower(str.at(j))) { return "false";}
-    i++; j--;
+    while ( !isalpha_m(str.at(j)) && j > 0 ) {
+      j--;
+      if( j == 0 ) { foundNextAlphanum = false; }
+    }
+
+    // check corresponding alphanumerical characters
+    // if foundNextAlphanum is false, that means that one of the indexes
+    // when increasing or decreasing (in case of i or j accordingly) did not
+    // found the next alphanumerical value to compare with and reached the end 
+    // of the string
+    if (foundNextAlphanum && tolower(str.at(i)) != tolower(str.at(j))) { 
+      return "false";
+    }
+    i++; 
+    j--;
   }
   return "true";
 }
 
+#ifndef CODERBYTE_CHALLENGES_TEST_CPP_FLAG 
 int main(void) { 
   // keep this function call here
-  std::cout << PalindromeTwo(coderbyteInternalStdinFunction(stdin));
+  // std::cout << PalindromeTwo(coderbyteInternalStdinFunction(stdin));
+  std::cout << PalindromeTwo("!Al!lets!Della!call!Ed!\"Stella\".");
   return 0;
 }
+#endif

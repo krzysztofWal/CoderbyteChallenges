@@ -25,33 +25,47 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <unordered_set>
-using std::string, std::cout;
 
 std::unordered_set<std::string_view> GetSet(const std::string_view &sv) {
-  std::unordered_set<std::string_view> us;
-  size_t pos{}, pos_{};
+  
+  char separator{','};
+  std::unordered_set<std::string_view> tmpSet;
+  int currentPostion{}, previousPosition{-1};
 
-  pos = sv.find(",");
-  us.insert(sv.substr(pos_,pos-pos_));
-  pos_ = pos;
-  pos = sv.find(",",pos_+1);
-  while (pos < std::string::npos) { 
-    us.insert(sv.substr(pos_+1,pos-pos_-1));
-    pos_ = pos;
-    pos = sv.find(",",pos_+1);
+  // assuming that there are no trailing and leading spaces in the list of
+  // words
+
+  // find the first occurrence of separator
+  currentPostion = sv.find(separator);
+
+  // until we have reached the end of the string
+  while (currentPostion < std::string::npos) { 
+    // add the word to the set
+    tmpSet.insert(sv.substr(previousPosition+1, currentPostion-previousPosition-1));
+    previousPosition = currentPostion;
+    currentPostion = sv.find(separator, previousPosition+1);
   }
-  return us;
+
+  // add the last entry (or the first if there is only one)
+  tmpSet.insert(sv.substr(previousPosition+1, sv.length()-1));
+  
+  return tmpSet;
 }
 
-string WordSplit(string strArr[], int arrLength) {
+std::string WordSplit(std::string strArr[], int arrLength) {
   // code goes here
   std::string_view fView = strArr[0];
   std::string_view sView = strArr[1];
+  //create an unordered set of words from the second string
   std::unordered_set<std::string_view> words = GetSet(sView);
 
+  // for every character in the first string
   for (size_t i{}; i < fView.length() - 1; i++) {
-    if( words.find(fView.substr(0,i+1)) != words.end() &&
-        words.find(fView.substr(i+1,fView.length()-i-1)) != words.end() ) {
+    // if you can find the words created by reading the first string
+    // from 0 to i-th character and from i+1 to the last character
+    // return those two words
+    if( words.find(fView.substr(0, i+1)) != words.end() &&
+          words.find(fView.substr(i+1, fView.length()-i-1)) != words.end() ) {
         return (strArr[0].substr(0,i+1) + "," + strArr[0].substr(i+1,fView.length()-i-1));
     }
   }
@@ -59,10 +73,13 @@ string WordSplit(string strArr[], int arrLength) {
   return "not possible";
 }
 
+#ifndef CODERBYTE_CHALLENGES_TEST_CPP_FLAG // for use with google tests
 int main(void) { 
   // keep this function call here
-  string A[] = coderbyteInternalStdinFunction(stdin);
+  // string A[] = coderbyteInternalStdinFunction(stdin);
+  std::string A[] = {"helloworld", "hello,group,mope,tope,world"};
   int arrLength = sizeof(A) / sizeof(*A);
-  cout << WordSplit(A, arrLength);
+  std::cout << WordSplit(A, arrLength);
   return 0;
-}
+} 
+#endif
