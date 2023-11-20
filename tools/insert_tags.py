@@ -5,6 +5,9 @@ import pylightxl as xl
 import re
 import subprocess
 import os
+import sys
+# comment/uncomments pdb import to disable/enable debug breakpoints
+# import pdb
 
 if __name__ == "__main__":
 
@@ -14,17 +17,24 @@ if __name__ == "__main__":
     worksheet_name = ('Sheet1')
     info_cell_adress = 'B1'
     tag_delimiter = ','
+    gitignore_file = '.git/info/exclude'
     
     insert_tags_into_files = False
     generate_readme = True
     care_for_gitignore = True
+
+    # set the debug flag
+    if 'pdb' not in sys.modules:
+        if_debugging = False
+    else:
+        if_debugging = True
 
     # if you want to print the readme file into the console
     if generate_readme:
         base_readme_text = '\n'.join(["### Coderbyte challenges",
         "This repository contains solutions to challenges from Coderbyte.",
         "",
-        "Stated 'achieved complexity' was calculated atutomatically Coderbyte analysis tool (https://coderbyte.com/big-o-runtime-guide)",
+        "Stated 'achieved complexity' was calculated with Coderbyte analysis tool (https://coderbyte.com/big-o-runtime-guide)",
         "",
         "### Sorted by tags"])
         
@@ -33,10 +43,30 @@ if __name__ == "__main__":
 # =========================================================================================================
 
     def get_ignored(filename : str) -> list:
+        """Read the file line by line and return lines that are like
+          'src/src_file_name\n' (does not return the \n character), 
+          ignore if the number of subdirectories is larger than
+          one and if the subdirectory is not src
+
+        Args:
+            filename (str) : name of the file to be read
+        
+        Returns:
+            list: list of files in the drc catalogue to be ignored
+        """
         git_list = []
-        with open('.gitignore','r') as ignore:
+        
+        with open(filename,'r') as ignore:
             for ignore_file in ignore:
-                git_list.append(ignore_file.removesuffix('\n'))
+                full_path_split = ignore_file.removesuffix('\n').split('/');
+                if len(full_path_split) == 2 and full_path_split[0] == 'src':
+
+                    # if if_debugging: pdb.set_trace();
+
+                    git_list.append(full_path_split[1])
+
+        # if if_debugging: pdb.set_trace();
+    
         return git_list
 
     def is_python(filename : str) -> bool:
@@ -96,8 +126,14 @@ if __name__ == "__main__":
         """
         it = nums[0]
         while it < nums[1] + 1:
-            yield (db_obj.ws(ws=worksheet_name).address(letter+str(it)),
-                   db_obj.ws(ws=worksheet_name).address(letter_tags+str(it)).strip())
+            
+            filename = db_obj.ws(ws=worksheet_name).address(letter+str(it));
+            file_tags = db_obj.ws(ws=worksheet_name).address(letter_tags+str(it)).strip();
+
+            # if if_debugging: pdb.set_trace();
+
+            yield (filename, file_tags)
+            
             it += 1
 
     def make_tagged_copy(filename: str, copy_name: str, formatted_tags: str):
@@ -191,9 +227,11 @@ if __name__ == "__main__":
         result = subprocess.run(command, shell=True, stdout=subprocess.DEVNULL)
         return result.returncode
 
+    # ignore files list
+    # empty if the flag care_for_gitignore is set to false
     git_list = []
     if care_for_gitignore:
-        git_list = get_ignored('.gitignore')
+        git_list = get_ignored(gitignore_file)
 
     # read xls file and read adresses with relevant information
     db = xl.readxl(fn=import_path, ws=(worksheet_name))
@@ -203,8 +241,15 @@ if __name__ == "__main__":
     
     # get all filenames and associated tags
     for filename, tags in filename_tags_iterator(db, worksheet_name, nums, letter, letter_tags):
+        
+        # if if_debugging and filename in git_list: pdb.set_trace();
+
         if tags == '' or filename in git_list:
-            # if there ane no tags associated with that file
+            # if there ane no tags associated with that file 
+            # or the file is in git_list
+            
+            # if generate_readme and if_debugging: pdb.set_trace();
+
             if insert_tags_into_files:
                 print("INFO: ", filename, "has no associated tags")
         else:
@@ -226,9 +271,12 @@ if __name__ == "__main__":
                     print("Tags sucsesfully added/replaced in", filename_with_src)
         
             if generate_readme:
+
+                # if if_debugging: pdb.set_trace();
+
                 # add the filename to tag_dictionary
                 for tag in tags.split(tag_delimiter):
-                    filename_wrapped = ''.join(['[', filename, '](', base_link, 'src/' ,filename, ' "', 'Go into the source file', '")'])
+                    filename_wrapped = ''.join(['[', filename, '](', base_link, 'src/' ,filename, ' "', 'Go to the source file', '")'])
                     if tag in tag_dictionary:
                         tag_dictionary[tag].append(filename_wrapped)
                     else:

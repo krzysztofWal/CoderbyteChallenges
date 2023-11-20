@@ -12,10 +12,11 @@ Optimal: o(n), achieved: o(n)
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <map>
 
 std::string AlphabetSoup(std::string str) {
   // code goes here 
-  /*
+  
   std::string tmp;
   std::multimap<int,int> m; //char is the key, index is the value
   bool *u_pos = new(std::nothrow) bool[str.length()]; // keep track of uppercase
@@ -35,9 +36,9 @@ std::string AlphabetSoup(std::string str) {
   } else {
     return "Error allocating";
   }
-  */
+  
   // well if there are no upper cases
-  std::sort(str.begin(),str.end());
+  // std::sort(str.begin(),str.end());
   return str;
 }
 
