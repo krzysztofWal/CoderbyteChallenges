@@ -20,55 +20,11 @@ Optimal: o(n^2), achieved: o(n^2)
 #include <unordered_set>
 #include <vector>
 
-// return position of character separator in provided string
-std::vector<size_t> GetIndex(const std::string_view &sv, char separator) {
+/* "Helper" functions to extract searched-for words and boggle array*/
+std::vector<size_t> GetIndex(const std::string_view &sv, char separator);
+std::vector<std::string_view> GetWords(const std::string_view &sv, std::vector<size_t> &&vec);
+std::vector<std::vector<char>> GetArr(const std::string_view &sv, std::vector<size_t> &&vec);
   
-  std::vector<size_t> tmpV;
-  size_t pos{sv.find(separator)};
-  
-  while (pos != std::string::npos) {
-    tmpV.push_back(pos);
-    pos = sv.find(separator, tmpV.back() + 1);
-  }
-  
-  // tmpV.push_back(sv.length());
-  return tmpV;
-}
-
-// get words form string sv based on separator locations from vec
-std::vector<std::string_view> GetWords(const std::string_view &sv, std::vector<size_t> &&vec) {
-
-  vec.push_back(sv.length());
-  std::vector<std::string_view> us{sv.substr(0, vec.at(0))};
-
-  for (size_t i{1}; i < vec.size(); i++)
-    us.emplace_back(sv.substr(vec.at(i - 1) + 2, vec.at(i) - vec.at(i - 1) - 2));
-  return us;
-}
-
-std::vector<std::vector<char>> GetArr(const std::string_view &sv, std::vector<size_t> &&vec) {
-  
-  vec.push_back(sv.length());
-  
-  const size_t firstDim{vec.size()};
-  const size_t secDim{vec.at(0)};
-
-  size_t cnt{};
-  std::vector<std::vector<char>> arrAsVec(firstDim, std::vector<char>(secDim, ' '));
-
-  // fill first row
-  for (size_t i{}; i < secDim; i++) {
-    arrAsVec.at(0).at(i) = sv.at(i); 
-  }
-  // fill other rows
-  for (size_t i{1}; i < firstDim; i++) {
-    cnt = 0;
-    for (size_t j{vec.at(i - 1) + 1}; j < vec.at(i); j++)
-      arrAsVec.at(i).at(cnt++) = sv.at(j);
-  }
-
-  return arrAsVec;
-}
 
 bool DepthFirstSearch(const std::string_view &wordWeSeek, std::vector<std::vector<char>> &charMatrix,
                       long long i, long long j, size_t vecDimOne, size_t vecDimTwo, size_t howFarIntoTheWord){
@@ -151,7 +107,7 @@ std::string BoggleSolver(std::string strArr[], int arrLength)
         }
       }
     }
-    // if the word was not found add it to the string onf not-found words
+    // if the word was not found add it to the string of not-found words
     if (!wordFound) {
       notFoundWords += word;
       notFoundWords += ",";
@@ -179,6 +135,58 @@ int main(void) {
   return 0;
 }
 #endif
+
+
+// return position of character separator in provided string
+std::vector<size_t> GetIndex(const std::string_view &sv, char separator) {
+  
+  std::vector<size_t> tmpV;
+  size_t pos{sv.find(separator)};
+  
+  while (pos != std::string::npos) {
+    tmpV.push_back(pos);
+    pos = sv.find(separator, tmpV.back() + 1);
+  }
+  
+  // tmpV.push_back(sv.length());
+  return tmpV;
+}
+
+// get words form string sv based on separator locations from vec
+std::vector<std::string_view> GetWords(const std::string_view &sv, std::vector<size_t> &&vec) {
+
+  vec.push_back(sv.length());
+  std::vector<std::string_view> us{sv.substr(0, vec.at(0))};
+
+  for (size_t i{1}; i < vec.size(); i++)
+    us.emplace_back(sv.substr(vec.at(i - 1) + 2, vec.at(i) - vec.at(i - 1) - 2));
+  return us;
+}
+
+std::vector<std::vector<char>> GetArr(const std::string_view &sv, std::vector<size_t> &&vec) {
+  
+  vec.push_back(sv.length());
+  
+  const size_t firstDim{vec.size()};
+  const size_t secDim{vec.at(0)};
+
+  size_t cnt{};
+  std::vector<std::vector<char>> arrAsVec(firstDim, std::vector<char>(secDim, ' '));
+
+  // fill first row
+  for (size_t i{}; i < secDim; i++) {
+    arrAsVec.at(0).at(i) = sv.at(i); 
+  }
+  // fill other rows
+  for (size_t i{1}; i < firstDim; i++) {
+    cnt = 0;
+    for (size_t j{vec.at(i - 1) + 1}; j < vec.at(i); j++)
+      arrAsVec.at(i).at(cnt++) = sv.at(j);
+  }
+
+  return arrAsVec;
+}
+
 
 // std::cout << "DFS :" << ind << " :" << v.at(i).at(j) << " i:" << i << " j:" << j << std::endl;
 // std::cout << sv << std::endl;
