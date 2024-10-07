@@ -7,7 +7,7 @@ include(./tools/function_script.cmake)
 
 project(CoderbyteChallenges)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17) # was 20 but my current environment does not cope well (7.10.24), should make no difference whatsoever
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #testing

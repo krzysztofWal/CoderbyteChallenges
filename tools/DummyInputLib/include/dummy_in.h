@@ -13,7 +13,7 @@ extern "C" {
 
 std::string coderbyteInternalStdinFunction(FILE * dummy_ptr);
 
-#else
+#else // CODERBYTE_CHALLENGES_SRC_CPP_FLAG
 /* c implementation */
 
 #include <stdio.h>
@@ -22,7 +22,11 @@ std::string coderbyteInternalStdinFunction(FILE * dummy_ptr);
 #include <stdbool.h>
 
 /* the memory block pointed to by return char* should be freed */
-char * coderbyteInternalStdinFunction(FILE * dummy_ptr);
+char * coderbyteInternalStdinFunction(FILE * stdin_ptr);
+
+/* 1) put char from stdin_ptr in *destination if not EOF and return true
+   2) if EOF or '\n' put '\0' to *destination and return false */
+bool getc_wrap(FILE* stdin_ptr, char* destination);
 
 /* use realloc to allocate memory dynamically  */
 bool push(char *arr, uint32_t index, char value, uint32_t *size, uint32_t *capacity);

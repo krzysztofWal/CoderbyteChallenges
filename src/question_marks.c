@@ -34,7 +34,7 @@ void QuestionsMarks(char * str) {
         // check if between them are exactly three question marks
         for (int j=positions[cnt-2]+1;j<positions[cnt-1];j++) {if (str[j] == 63) {q_cnt++;}}
           if (IF_DEBUG) {
-            printf("position %i and %i are  equal 10\n",positions[cnt-2],positions[cnt-1]);
+            printf("position %i and %i are equal 10\n",positions[cnt-2],positions[cnt-1]);
             printf("Between %i and %i are %i question marks\n",positions[cnt-2],positions[cnt-1],q_cnt);
           }
         if (q_cnt!=3) {printf("false"); return;}
