@@ -12,10 +12,15 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-#include <deque>
 
+#define SAY_YES_TO_REGEX 
+
+
+#ifndef SAY_YES_TO_REGEX
+#include <deque>
+// who heard of regexes? not me
 std::string ABCheck(std::string str) {
-  // code goes here  
+   // code goes here  
   size_t a{str.find("a")},b{str.find("b")},s{str.find(" ")};
   int sPos{-1}, sCnt;
   std::deque<int> pos{};
@@ -46,6 +51,33 @@ std::string ABCheck(std::string str) {
   }
   return "false";
 }
+
+#else
+#include <regex>
+// oh, but you know, they actually can be handy
+// and look since c++ 11 you can do them without third-party libraries!
+// how quaint
+std::string ABCheck(std::string str) {
+    // matches the whole expression so we need optional 'padding'
+    // std::regex regexExpr("((.)|(\n))*a((.)|(\n)){3,3}b((.)|(\n))*", std::regex_constants::nosubs|std::regex_constants::icase);
+
+    // if (std::regex_match(str, regexExpr)) {
+    //   return "true";
+    // } else {
+    //   return "false";
+    // };
+
+    std::regex regexExpr("a((.)|(\n)){3,3}b", std::regex_constants::nosubs | std::regex_constants::icase);
+    if (std::regex_search(str.cbegin(), str.cend(),  regexExpr, std::regex_constants::match_any)) {
+      return "true";
+    } else {
+      return "false";
+    }
+
+}
+
+#endif
+
 
 int main(void) { 
   // keep this function call here
