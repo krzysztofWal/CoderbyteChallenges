@@ -11,8 +11,13 @@ Optimal: o(n), achieved: o(n)
 
 #include <iostream>
 #include <string>
-#include <set>
 #include <algorithm>
+
+#define SAY_YES_TO_REGEX
+
+#ifndef SAY_YES_TO_REGEX
+#include <set>
+
 
 int VowelCount(const std::string &str) {  
   // code goes here 
@@ -22,6 +27,26 @@ int VowelCount(const std::string &str) {
     [&](char c){if(vowSet.find(c)!=vowSet.end()) {cnt++;} });
   return cnt;
 }
+#else
+#include <regex>
+
+int VowelCount(const std::string &str) {
+  std::regex reg("[aeiou]", std::regex_constants::icase | std::regex_constants::nosubs);
+  // auto sBegin = std::sregex_iterator(str.begin(), str.end(), reg);
+  // auto sEnd = std::sregex_iterator();
+  // return static_cast<int>(std::distance(sBegin, sEnd));
+  size_t i = 0;
+  for(std::sregex_iterator it = std::sregex_iterator(str.begin(), str.end(), reg);
+      it != std::sregex_iterator();
+      ++it )
+    {
+      i++;
+    }
+  
+    return i;
+  }
+
+#endif
 
 int main(void) { 
   // keep this function call here
