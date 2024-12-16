@@ -33,8 +33,8 @@ std::string SimpleSymbols(std::string str) {
 #else
 #include <regex>
 
-/* This one not tested very thoughrougly, and given what I've read about implementation of regexes in standard libray
-it is probably slower than the solution above xD */
+/* This one not tested very thoroughly, and from what I've read about
+implementation of regexes in standard library, it is probably slower than the solution above xD */
 std::string SimpleSymbols(std::string str) {
 
   std::regex reg, reg2;

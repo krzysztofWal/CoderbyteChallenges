@@ -55,10 +55,10 @@ std::string ABCheck(std::string str) {
 #else
 #include <regex>
 // oh, but you know, they actually can be handy
-// and look since c++ 11 you can do them without third-party libraries!
+// and look, since c++ 11 you can do them without third-party libraries!
 // how quaint
 std::string ABCheck(std::string str) {
-    // matches the whole expression so we need optional 'padding'
+    // matches the whole expression, so we need optional 'padding'
     // std::regex regexExpr("((.)|(\n))*a((.)|(\n)){3,3}b((.)|(\n))*", std::regex_constants::nosubs|std::regex_constants::icase);
 
     // if (std::regex_match(str, regexExpr)) {

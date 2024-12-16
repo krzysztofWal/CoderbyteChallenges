@@ -16,21 +16,23 @@ Optimal: o(n), achieved: o(n)
 #include <string>
 #include <vector>
 #include <array>
+#include <regex>
 
-/* O(n) - using */
-
-// int BracketCombinations(int num) {
-//   int previousCatalan{1};
-//   for (int i{1};i<num;i++) {
-//     previousCatalan = previousCatalan*(2*(2*i+1))/(i+2);
-//    // std::cout << previousCatalan << "\n";
-//   }
-//   return previousCatalan;
-// }
+/* O(n) - using :*/
+/*
+int BracketCombinations(int num) {
+  int previousCatalan{1};
+  for (int i{1};i<num;i++) {
+    previousCatalan = previousCatalan*(2*(2*i+1))/(i+2);
+   // std::cout << previousCatalan << "\n";
+  }
+  return previousCatalan;
+}
+*/
 
 /* Recursive using dynamic programming - O(n^2) -> cost: T(n)= (n^2 + n - 2)/2 
   - that is if number of recursive calls is halved  */
-int Catalan(int num, std::vector<int> &cat, int &cnt) {
+unsigned long long Catalan(unsigned long long num, std::vector<unsigned long long> &cat, int &cnt) {
   cnt++;
   
   // catalan numbers -> c(n+1) = sum_(i = 0)^n [ c(i) + c(n-i) ]
@@ -40,13 +42,14 @@ int Catalan(int num, std::vector<int> &cat, int &cnt) {
     return cat.at(num);
   }
   // calculate cat(n)
-  int sum {0};
-  int tmp{};
+  unsigned long long sum {0};
   
-  // for (int i{0}; i<num;i++) {
-  //   // call recursive
-  //   sum += Catalan(i, cat, cnt) * Catalan(num - i - 1, cat, cnt);
-  // }
+  /*
+  for (int i{0}; i<num;i++) {
+    // call recursive
+    sum += Catalan(i, cat, cnt) * Catalan(num - i - 1, cat, cnt);
+  }
+  */
 
   /* number of calls in half */
   // if num is even
@@ -59,10 +62,10 @@ int Catalan(int num, std::vector<int> &cat, int &cnt) {
   } else {
     // for example for c(5) -> c(0)c(4) + c(1)c(3) + c(2)c(2) + c(3)c(1) + c(4)c(0) = 
     // = 2 [c(0)c(4) + c(1)c(3)] + [c(2)]^2
-    for (int i{0}; static_cast<double>(i) < num/2; i++) {
+    for (int i{0}; i < num/2; i++) {
       sum += 2 * (Catalan(i, cat, cnt) * Catalan(num - i - 1, cat, cnt));
     }
-    int tmp = (Catalan(static_cast<int>(num/2), cat, cnt));
+    unsigned long long tmp = (Catalan(static_cast<unsigned long long>(num/2), cat, cnt));
     sum += tmp * tmp;
   }
 
@@ -72,24 +75,23 @@ int Catalan(int num, std::vector<int> &cat, int &cnt) {
   return sum;
 }
 
-int BracketCombinations(int num) { 
-  std::vector<int> cat {1, 1};
+// unsigned long long BracketCombinations(unsigned long long num) { 
+unsigned long long BracketCombinations(unsigned long long num) { 
+
+  std::vector<unsigned long long> cat {1, 1};
   int cnt{0};
-  int res = Catalan(num, cat, cnt);
-  std::cout << "called : " << cnt << " times. Value: ";
+  unsigned long long res = Catalan(num, cat, cnt); // cnt just for information
+  // std::cout << "called : " << cnt << " times. Value: ";
   return res;
+  // return 0;
 }
 
-
+#ifndef CODERBYTE_CHALLENGES_TEST_CPP_FLAG // for use with google tests
 int main(void) {
    
   // keep this function call here
   // std::cout << BracketCombinations(coderbyteInternalStdinFunction(stdin));
-  std::cout << BracketCombinations(std::stoi(coderbyteInternalStdinFunction(stdin)));
-  // std::cout << BracketCombinations(2);
-  // std::cout << BracketCombinations(3);
-  // std::cout << BracketCombinations(4);
-
+  std::cout << BracketCombinations(std::stoll(coderbyteInternalStdinFunction(stdin)));
   return 0;
-    
 }
+#endif
