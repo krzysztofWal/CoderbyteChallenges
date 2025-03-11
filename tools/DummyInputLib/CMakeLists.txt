@@ -13,6 +13,17 @@ set(c_cpp_flag_ CODERBYTE_CHALLENGES_SRC_CPP_FLAG)
 # #ifdef CMAKE_CODERBYTE_SOLUTIONS_BUILD
 #   free(str)
 # #endif // CMAKE_CODERBYTE_SOLUTIONS_BUILD
+# 
+
+# HOW DOES FREE KNOWS HOW MUCH TO FREE? (by Gary McGill, edited by inspector-g, 
+# at https://stackoverflow.com/a/1518718):
+
+# When you call malloc(), you specify the amount of memory to allocate. The amount of memory actually used
+# is slightly more than this, and includes extra information that records (at least) how big the block
+# is. You can't (reliably) access that other information - and nor should you :-).
+# 
+# When you call free(), it simply looks at the extra information to find out how big the block is.
+
 set(c_free_flag_ CMAKE_CODERBYTE_SOLUTIONS_BUILD)
 
 # cpp lib

@@ -28,9 +28,6 @@ char * coderbyteInternalStdinFunction(FILE * stdin_ptr);
    2) if EOF or '\n' put '\0' to *destination and return false */
 bool getc_wrap(FILE* stdin_ptr, char* destination);
 
-/* use realloc to allocate memory dynamically  */
-bool push(char *arr, uint32_t index, char value, uint32_t *size, uint32_t *capacity);
-
 
 #endif // CODERBYTE_CHALLENGES_SRC_CPP_FLAG
 

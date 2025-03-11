@@ -4,8 +4,8 @@
 
 #include "dummy_in.h"
 
-#define STRING_DEFAULT_SIZE 50 // set to lower if you want to test reallocation of memory
-// #define DEBUG_DUMMY_IN_C // just so I can see with my own idiot eyes what is happening
+#define STRING_DEFAULT_SIZE 50u // set to lower if you want to test reallocation of memory
+#define DEBUG_DUMMY_IN_C // just so I can see with my own idiot eyes what is happening
 
 /* the memory block pointed to by return char* should be freed */
 char* coderbyteInternalStdinFunction(FILE * stdin_ptr) {
@@ -13,7 +13,7 @@ char* coderbyteInternalStdinFunction(FILE * stdin_ptr) {
     // string array with starting size
     // lets allocate some memory using a varaible defined in the preprocessor 
     char *strArr = (char*)malloc(STRING_DEFAULT_SIZE * sizeof(char));
-    
+
     // if allocation failed just return string "error"
     if(!strArr) {printf("Error allocating memory\n");return "error";}
 
@@ -61,7 +61,7 @@ char* coderbyteInternalStdinFunction(FILE * stdin_ptr) {
     #ifdef DEBUG_DUMMY_IN_C 
         printf("overflow_cnt=%d", overflow_cnt);
         for(int i=0; i<(1 + overflow_cnt) * STRING_DEFAULT_SIZE; i++) {
-            printf("\n%d, %c", i, strArr[i]);
+            printf("\n%d, %c, %i", i, strArr[i], (int)strArr[i]);
         }
         printf("\n");
     #endif
@@ -69,7 +69,7 @@ char* coderbyteInternalStdinFunction(FILE * stdin_ptr) {
     // make the buffer the size of the final string - is it strictly necessary as the string ends with '\0' 
     //                                                and the buffer which strArr points to is just bigger size than the string
     //                                                (the memory not being lost?) - but whatever
-    strArr = (char*)realloc((void*)strArr, cnt-1);
+    strArr = (char*)realloc((void*)strArr, cnt);
     if(!strArr) {printf("\nError reallocating memory\n");return "error";}
 
     // to make sure that this function works properly and that the string is properly read.
@@ -90,20 +90,7 @@ bool getc_wrap(FILE* stdin_ptr, char* destination) {
     } else {
     // else put '\0' in the destination and return false
         *destination = '\0';
+        // printf("Putting endline!\n");
         return false;
     }
-}
-
-bool push(char *arr, uint32_t index, char value, uint32_t *size, uint32_t *capacity) {
-  	if (*size > * capacity) {
-  		arr = (char *)realloc(arr, sizeof(arr) * 2);
-		*capacity = sizeof(arr) * 2;
-	}
-	if (arr != NULL) {
-		arr[index] = value;
-    	*size = *size + 1;
-		return true;
-	} else {
-		return false;
-	}
 }

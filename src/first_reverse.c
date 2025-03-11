@@ -13,7 +13,10 @@ Optimal: o(n), achieved: o(n)
 #include <string.h>
 
 void FirstReverse(char * str) {
-  // code goes here  
+  // printf("%lu\n",sizeof(str));
+  // printf("%lu\n",sizeof(char*)); // They both return the same because how could they not?
+
+  // code goes here
   for (unsigned long i = strlen(str)-1; i>0 ;i--) {
     printf("%c",*(str+i));
   }
